@@ -1,37 +1,37 @@
-# require "./character.rb"
+require "./character.rb"
 # require "./monster.rb"
 
-class Brave
-  attr_reader :brave
+class Brave < Character
+  # attr_reader :brave
 
-  def initialize(characters)
-    @brave = characters[0]
-  end
+  # def initialize(characters)
+  #   @brave = characters[0]
+  # end
   
   def attack(monster)
-    puts "#{brave.name}の攻撃！" 
-    monster_damege = brave.offense - monster.monster.defense/2
-    monster.monster.hp -= monster_damege
-    monster.monster.hp > 0 ? monster.monster.hp : monster.monster.hp = 0 
-    puts "#{monster.monster.name}に#{monster_damege}のダメージを与えた！"
+    puts "#{@name}の攻撃！" 
+    monster_damege = @offense - monster.defense/2
+    monster.hp -= monster_damege
+    monster.hp > 0 ? monster.hp : monster.hp = 0 
+    puts "#{monster.name}に#{monster_damege}のダメージを与えた！"
   end
   
-  def show_status(monster)
-    puts <<~TEXT
+  # def show_status(monster)
+  #   puts <<~TEXT
 
-    *=*=*=*=*=*=*=*=*=*=*=*=*=*
-    【#{brave.name}】HP: #{brave.hp}
-    【#{monster.monster.name}】HP: #{monster.monster.hp}
-    *=*=*=*=*=*=*=*=*=*=*=*=*=*
+  #   *=*=*=*=*=*=*=*=*=*=*=*=*=*
+  #   【#{@name}】HP: #{@hp}
+  #   【#{monster.name}】HP: #{monster.hp}
+  #   *=*=*=*=*=*=*=*=*=*=*=*=*=*
     
-    TEXT
-  end
+  #   TEXT
+  # end
   
-  def battle_result(monster)
-    if monster.monster.hp == 0
-      puts "#{monster.monster.name}をやっつけた！"
-    else brave.hp == 0
-      puts "#{brave.name}はしんでしまった！"
-    end
-  end
+  # def battle_result(monster)
+  #   if monster.hp == 0
+  #     puts "#{monster.name}をやっつけた！"
+  #   else @hp == 0
+  #     puts "#{@name}はしんでしまった！"
+  #   end
+  # end
 end
