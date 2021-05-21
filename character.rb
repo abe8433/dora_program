@@ -4,11 +4,11 @@ class Character
   # 「:hp」は attr_accessor でまとめてもよかったのですが、
   # 学習のためにあえて attr_reader と attr_writer で記述しています。
 
-  def initialize(character_params)
-    @name = character_params[:name]
-    @level = character_params[:level]
-    @hp = character_params[:hp]
-    @offense = character_params[:offense]
-    @defense = character_params[:defense]
+  def initialize(brave_params)
+    @name = brave_params[:name]
+    @level = brave_params[:level]
+    @hp = brave_params[:hp]
+    @offense = brave_params[:offense]
+    @defense = brave_params[:defense]
   end
 end
